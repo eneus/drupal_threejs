@@ -1,0 +1,7 @@
+name: Three.js
+type: module
+description: Integration three.js library to display WebGL media data
+package: WebGL
+core: 8.x
+version: '8.x-1.0-dev'
+project: 'threejs'

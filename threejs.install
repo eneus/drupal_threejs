@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Installation actions for the Three.js module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function threejs_install() {
+  drupal_set_message(t('Module Three.js was installed'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function threejs_uninstall() {
+  drupal_set_message(t('Module Three.js had uninstall'));
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function threejs_requirements($phase) {
+  if ($phase != 'runtime') {
+    return [];
+  }
+
+  if (function_exists('libraries_get_path')) {
+    $path = libraries_get_path('threejs') . '/three.js/build/three.min.js';
+  }
+  else {
+    $path = DRUPAL_ROOT . '/libraries/three.js/build/three.min.js';
+  }
+
+  $exists = is_file($path);
+
+  return [
+    'slick_library' => [
+      'title'       => t('Three.js library'),
+      'description' => $exists ? '' : t('The <a href=":url">Three.js library</a> should be installed at <strong>/libraries/three.js/build/three.min.js</strong>, or any path supported by libraries.module if installed.', [':url' => 'https://github.com/mrdoob/three.js/']),
+      'severity'    => $exists ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+      'value'       => $exists ? t('Installed') : t('Not installed'),
+    ],
+  ];
+}
