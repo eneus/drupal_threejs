@@ -1,0 +1,11 @@
+# Schema for the configuration files of the ThreeJS module.
+
+# ThreeJS global settings managed by UI.
+threejs.settings:
+  type: config_object
+  label: 'ThreeJS settings'
+
+# ThreeJS settings managed by UI.
+threejs_optionset:
+  type: mapping
+  label: 'Settings'

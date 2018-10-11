@@ -8,13 +8,13 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Configure Three.js settings for this site.
  */
-class SettingsForm extends ConfigFormBase {
+class ThreejsAdminSettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'threejs_settings';
+    return 'threejs_admin_settings';
   }
 
   /**
@@ -32,10 +32,10 @@ class SettingsForm extends ConfigFormBase {
     $form['threejs_test'] = [
       '#type' => 'item',
       '#title' => $this->t('Test Three.js library'),
-      '#markup' => '<div id="test-threejs">Test canvast 3D</div>',
-      '#attached' => array(
-        'library' => array( 'threejs/threejs' ),
-      ),
+      '#markup' => '<div id="testThreejs"></div>',
+      '#attached' => [
+        'library' => [ 'threejs/threejs.init' ],
+      ],
     ];
     $form['threejs'] = [
       '#type' => 'textfield',

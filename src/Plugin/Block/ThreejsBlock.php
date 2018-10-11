@@ -8,12 +8,12 @@ use Drupal\Core\Block\BlockBase;
  * Provides a 'Example' block.
  *
  * @Block(
- *   id = "threejs_example",
- *   admin_label = @Translation("Example"),
+ *   id = "threejs_block",
+ *   admin_label = @Translation("Three.js"),
  *   category = @Translation("Three.js")
  * )
  */
-class ExampleBlock extends BlockBase {
+class ThreejsBlock extends BlockBase {
 
   /**
    * {@inheritdoc}

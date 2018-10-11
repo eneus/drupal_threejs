@@ -1,16 +1,4 @@
-# Custom module library for general purposes.
 threejs:
-  js:
-    js/threejs.js: {}
-  css:
-    component:
-      css/threejs.css: {}
-  dependencies:
-    - core/drupalSettings
-    - threejs/three.js
-
-# Third-party library (self hosted).
-three.js:
   remote: https://github.com/mrdoob/three.js/
   version: r97
   license:
@@ -18,20 +6,27 @@ three.js:
     url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
     gpl-compatible: true
   js:
-    /libraries/three.js/build/three.min.js: {}
-#  css:
-#    component:
-#      /libraries/jquery-labelauty/source/jquery-labelauty.css: {}
-#  dependencies:
-#    - core/jquery
+    /libraries/three.js/build/three.min.js: { minified: true }
 
-# Third-party library (CDN).
-#vuejs:
-#  remote: https://vuejs.org
-#  version: 2.0.5
-#  license:
-#    name: MIT
-#    url: https://github.com/vuejs/vue/blob/dev/LICENSE
-#    gpl-compatible: true
-#  js:
-#    https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js: {type: external, minified: true}
+# Development Version
+threejs.dev:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/build/three.js: {}
+
+# Custom module library for general purposes.
+threejs.init:
+  js:
+    js/threejs.js: {}
+  css:
+    component:
+      css/threejs.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - threejs/threejs

@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Returns responses for Three.js routes.
  */
-class ThreeJsController extends ControllerBase {
+class ThreejsController extends ControllerBase {
 
   /**
    * The example service.

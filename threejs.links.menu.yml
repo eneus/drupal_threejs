@@ -1,0 +1,5 @@
+threejs.admin_settings:
+  route_name: threejs.settings_form
+  title: Three.js
+  description: 'Three.js settings.'
+  parent: system.admin_config_media

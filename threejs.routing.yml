@@ -1,15 +1,15 @@
-threejs.example:
-  path: '/threejs'
-  defaults:
-    _title: 'Three.js Test'
-    _controller: '\Drupal\threejs\Controller\ThreeJsController::build'
-  requirements:
-    _permission: 'access content'
-
 threejs.settings_form:
   path: '/admin/config/media/threejs'
   defaults:
     _title: 'Three.js settings'
-    _form: 'Drupal\threejs\Form\SettingsForm'
+    _form: 'Drupal\threejs\Form\ThreejsAdminSettingsForm'
   requirements:
     _permission: 'Administer Three.js configuration'
+
+threejs.example:
+  path: '/threejs'
+  defaults:
+    _title: 'Three.js Test'
+    _controller: '\Drupal\threejs\Controller\ThreejsController::build'
+  requirements:
+    _permission: 'access content'

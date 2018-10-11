@@ -8,3 +8,17 @@
  * This file is no longer required in Drupal 8.
  * @see https://www.drupal.org/node/2217931
  */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function threejs_help($route_name, RouteMatchInterface $route_match) {
+  $output = '';
+  switch ($route_name) {
+    case 'help.page.threejs':
+      $output = check_markup(file_get_contents(dirname(__FILE__) . '/README.md'), 'restricted_html');
+  }
+  return $output;
+}
