@@ -1,0 +1,7 @@
+threejs_examples.example:
+  path: '/threejs-examples/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\threejs_examples\Controller\TThreeJsExamplesController::build'
+  requirements:
+    _permission: 'access content'

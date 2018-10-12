@@ -1,0 +1,9 @@
+name: Three.js Examples
+type: module
+description: Provide examples WebGL media contents using three.js library
+package: WebGL
+core: 8.x
+dependencies:
+  - threejs
+  - threejs_fields
+  - threejs_editor

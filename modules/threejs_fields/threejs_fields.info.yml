@@ -1,0 +1,8 @@
+name: Three.js Fields
+type: module
+description: Provide a fields type for displaying Web GL media contents
+package: WebGL
+core: 8.x
+dependencies:
+  - threejs
+  - field

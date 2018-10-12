@@ -1,0 +1,15 @@
+threejs_editor.example:
+  path: '/threejs-editor/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\threejs_editor\Controller\ThreeJsEditorController::build'
+  requirements:
+    _permission: 'access content'
+
+threejs_editor.settings_form:
+  path: '/admin/config/system/threejs-editor'
+  defaults:
+    _title: 'Three.js Editor settings'
+    _form: 'Drupal\threejs_editor\Form\SettingsForm'
+  requirements:
+    _permission: 'administer threejs_editor configuration'

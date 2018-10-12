@@ -1,0 +1,4 @@
+administer threejs_editor configuration:
+  title: 'Administer threejs_editor configuration'
+  description: 'Optional description.'
+  restrict access: true

@@ -1,0 +1,4 @@
+administer threejs_fields configuration:
+  title: 'Administer threejs_fields configuration'
+  description: 'Optional description.'
+  restrict access: true

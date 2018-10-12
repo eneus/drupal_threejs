@@ -2,7 +2,7 @@
   "name": "drupal/threejs",
   "type": "drupal-module",
   "description": "The aim of the project is to create an easy to use Three.js library in Drupal projects. \nThe library provides Canvas 2D, SVG, CSS3D and WebGL renderers.",
-  "keywords": ["Drupal"],
+  "keywords": ["Drupal","Media", "WebGL"],
   "license": "MIT",
   "homepage": "https://www.drupal.org/project/threejs",
   "minimum-stability": "dev",

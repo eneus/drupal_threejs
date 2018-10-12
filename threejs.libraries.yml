@@ -30,3 +30,15 @@ threejs.init:
     - core/jquery
     - core/jquery.once
     - threejs/threejs
+
+# Custom module library for Help page.
+threejs.help:
+  header: true
+  js:
+    js/help/BrowserDetect.js: {}
+    js/help/tdl-minified.js: {}
+    js/help/logo4.js: {}
+    js/help/init.js: {}
+  css:
+    component:
+      css/threejs_help.css: {}

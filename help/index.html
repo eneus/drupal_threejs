@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)https://get.webgl.org/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./css/threejs_help.css">
+
+    <script type="text/javascript" src="./js/BrowserDetect.js"></script>
+    <script type="text/javascript" src="./js/tdl-minified.js"></script>
+    <script type="text/javascript" src="./js/logo4.js"></script>
+    <script type="text/javascript" src="./js/init.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+    <div id="support">
+
+        <div class="" id="have-javascript">
+            <div class="webgl-div" id="webgl-yes">
+                <h1 class="good">Your browser supports WebGL</h1>
+
+                <div id="webgl-experimental" style="display: none;">However, it indicates that support is
+                    experimental; Not all WebGL functionality may be supported, and
+                    content may not run as expected.
+                </div>
+
+                <div>You should see a spinning cube. If you do not, please
+                    <a id="support-link" href="https://support.google.com/chrome#topic=7438008">visit the support site
+                        for your browser</a>.
+                </div>
+
+                <div id="logo-container">
+                    <canvas id="webgl-logo" style="width: 140px; height: 150px;" width="280" height="300"></canvas>
+                </div>
+            </div>
+
+            <div class="webgl-hidden webgl-div" id="webgl-disabled">
+                <p>Hmm. While your browser seems to support WebGL, it is disabled or unavailable. If possible, please
+                    ensure that you are running the latest drivers for your video card.</p>
+                <p id="known-browser" class="webgl-hidden"><a id="troubleshooting-link" href="https://get.webgl.org/">For
+                    more help, please click this link</a>.</p>
+                <p id="unknown-browser">For more help, please visit the support site for your browser.</p>
+            </div>
+
+            <div class="webgl-hidden webgl-div" id="webgl-no">
+                <p>Oh no! We are sorry, but your browser does not seem to support WebGL.</p>
+                <div id="upgrade-browser">
+                    <p><a id="upgrade-link" href="https://get.webgl.org/">You can upgrade <span id="name"></span> by
+                        clicking this link.</a></p>
+                </div>
+                <div id="get-browser" class="webgl-hidden">
+                    <p>You may want to download one of the following browsers to view WebGL content.</p>
+
+                    <p>The following browsers support WebGL on <span id="platform"></span>:</p>
+
+                    <div id="webgl-browser-list">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="no-javascript" class=" webgl-hidden">
+            You must enable JavaScript to use WebGL.
+        </div>
+
+    </div>
+</div>
+
+<script id="modelVertexShader" type="text/something-not-javascript">
+uniform mat4 worldViewProjection;
+attribute vec4 position;
+void main() {
+  gl_Position = (worldViewProjection * position);
+}
+
+
+</script>
+<script id="modelFragmentShader" type="text/something-not-javascript">
+precision mediump float;
+void main() {
+  gl_FragColor = vec4(0.4, 0.4, 0.4, 1.0);
+}
+
+</script>
+
+
+</body>
+</html>

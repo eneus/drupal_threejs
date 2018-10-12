@@ -1,0 +1,8 @@
+name: Three.js Editor
+type: module
+description: Three.js Editor for editing and publish WebGL media contents
+package: WebGL
+core: 8.x
+dependencies:
+  - threejs
+  - threejs_fields
