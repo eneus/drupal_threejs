@@ -1,0 +1,120 @@
+{
+	"metadata": {
+		"type": "App"
+	},
+	"project": {
+		"gammaInput": false,
+		"gammaOutput": false,
+		"shadows": true,
+		"vr": false
+	},
+	"camera": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "C2AAE22C-4F44-45FE-9472-41DF943509A8",
+			"type": "PerspectiveCamera",
+			"name": "Camera",
+			"layers": 1,
+			"matrix": [-0.757323,0,0.653041,0,0.260784,0.916804,0.302428,0,-0.59871,0.399339,-0.694316,0,-2.261614,1.508493,-2.622764,1],
+			"fov": 50,
+			"zoom": 1,
+			"near": 0.01,
+			"far": 1000,
+			"focus": 10,
+			"aspect": 1.732412,
+			"filmGauge": 35,
+			"filmOffset": 0
+		}
+	},
+	"scene": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"geometries": [
+			{
+				"uuid": "058EBFB2-B0EB-40D9-9BDE-BA0D57CD9899",
+				"type": "BoxBufferGeometry",
+				"width": 1,
+				"height": 1,
+				"depth": 1,
+				"widthSegments": 1,
+				"heightSegments": 1,
+				"depthSegments": 1
+			}],
+		"materials": [
+			{
+				"uuid": "4B1D46FA-6C88-4799-B8B3-E6F8A3B74636",
+				"type": "MeshStandardMaterial",
+				"color": 16777215,
+				"roughness": 0.5,
+				"metalness": 0.5,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true
+			}],
+		"object": {
+			"uuid": "5FC9ACA9-2A93-474D-AA32-FACC76551914",
+			"type": "Scene",
+			"name": "Scene",
+			"layers": 1,
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+			"children": [
+				{
+					"uuid": "7552C5F7-A8B3-44FE-811C-7FE8F87A8A5D",
+					"type": "Mesh",
+					"name": "Box",
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0.5,0,1],
+					"geometry": "058EBFB2-B0EB-40D9-9BDE-BA0D57CD9899",
+					"material": "4B1D46FA-6C88-4799-B8B3-E6F8A3B74636"
+				},
+				{
+					"uuid": "CD52C8D8-E76F-4649-B9EB-9B31A899CEF2",
+					"type": "SpotLight",
+					"name": "SpotLight",
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,-8.101331,12.278734,-8.753847,1],
+					"color": 16777215,
+					"intensity": 1,
+					"distance": 0,
+					"angle": 0.314159,
+					"decay": 1,
+					"penumbra": 0,
+					"shadow": {
+						"camera": {
+							"uuid": "DE27E196-1D56-4635-B066-CC47D9FCBAC7",
+							"type": "PerspectiveCamera",
+							"layers": 1,
+							"fov": 50,
+							"zoom": 1,
+							"near": 0.5,
+							"far": 500,
+							"focus": 10,
+							"aspect": 1,
+							"filmGauge": 35,
+							"filmOffset": 0
+						}
+					}
+				}],
+			"background": 11184810
+		}
+	},
+	"scripts": {
+		"7552C5F7-A8B3-44FE-811C-7FE8F87A8A5D": [
+			{
+				"name": "RotationAnimation",
+				"source": "function update( event ) {\n\tthis.rotation.y+=0.05;\n}"
+			},
+			{
+				"name": "OrbitControl",
+				"source": "function update( event ) {}"
+			}]
+	}
+}

@@ -1,0 +1,4 @@
+services:
+  threejs.loader:
+    class: Drupal\threejs\ThreeJSLoader
+#    arguments: []

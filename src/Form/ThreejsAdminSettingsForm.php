@@ -37,7 +37,19 @@ class ThreejsAdminSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Test Three.js library'),
       '#markup' => '<div id="testThreejs" width="'. $container_width .'" height="'. $container_height.'"></div>',
       '#attached' => [
-        'library' => [ 'threejs/threejs.init' ],
+        'library' => [
+          'threejs/threejs.orbit.controls',
+          'threejs/threejs.test'
+        ],
+        'drupalSettings' => [
+          'threejs' => [
+            'container' => [
+              'background_color' => $this->config('threejs.settings')->get('background_color'),
+              'width' => $container_width,
+              'height' => $container_height
+            ]
+          ]
+        ]
       ],
     ];
 
@@ -82,6 +94,10 @@ class ThreejsAdminSettingsForm extends ConfigFormBase {
       ->set('container_width', $form_state->getValue('container_width'))
       ->set('container_height', $form_state->getValue('container_height'))
       ->save();
+
+    // Invalidate the library discovery cache to update new assets.
+    \Drupal::service('library.discovery')->clearCachedDefinitions();
+
     parent::submitForm($form, $form_state);
   }
 

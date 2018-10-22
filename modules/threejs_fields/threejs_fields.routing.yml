@@ -1,7 +1,0 @@
-threejs_fields.example:
-  path: '/threejs-fields/example'
-  defaults:
-    _title: 'Example'
-    _controller: '\Drupal\threejs_fields\Controller\ThreeJsFieldsController::build'
-  requirements:
-    _permission: 'access content'

@@ -2,9 +2,77 @@
 
 /**
  * @file
- * Primary module hooks for Three.js fields module.
- *
- * @DCG
- * This file is no longer required in Drupal 8.
- * @see https://www.drupal.org/node/2217931
+ * Exposes global functionality for creating canvas and WebGL content.
  */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\file\FileInterface;
+use Drupal\field\FieldStorageConfigInterface;
+use Drupal\field\FieldConfigInterface;
+/**
+ * Implements hook_theme().
+ */
+function threejs_fields_theme() {
+  return [
+    // Theme functions in image.module.
+    'canvas' => [
+      'variables' => [
+        'uri' => NULL,
+        'width' => NULL,
+        'height' => NULL,
+        'title' => NULL,
+        'attributes' => [],
+      ],
+    ],
+
+    // Theme functions in threejs_fields.admin.inc.
+    'canvas_preview' => [
+      'variables' => [
+        'style' => NULL,
+      ],
+      'file' => 'threejs_fields.admin.inc',
+    ],
+    'threejs_editor' => [
+      'variables' => ['style' => NULL],
+      'file' => 'threejs_fields.admin.inc',
+    ],
+
+    // Theme functions in threejs_fields.field.inc.
+    'threejs_file_widget' => [
+      'render element' => 'element',
+      'file' => 'threejs_fields.field.inc',
+    ],
+    'threejs_formatter' => [
+      'variables' => [
+        'item' => NULL,
+        'item_attributes' => NULL,
+        'url' => NULL,
+        'canvas' => NULL
+      ],
+      'file' => 'threejs_fields.field.inc',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_file_download().
+ *
+ * Control the access to files underneath the styles directory.
+ */
+function threejs_fields_file_download($uri) {
+  $path = file_uri_target($uri);
+
+  // Private file access for image style derivatives.
+  if (strpos($path, 'canvas/') === 0) {
+    $args = explode('/', $path);
+
+    // Discard "styles", style name, and scheme from the path
+    $args = array_slice($args, 3);
+
+    // Then the remaining parts are the path to the image.
+    $original_uri = file_uri_scheme($uri) . '://' . implode('/', $args);
+
+    return $original_uri;
+  }
+}

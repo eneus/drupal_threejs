@@ -1,34 +1,36 @@
-threejs:
-  remote: https://github.com/mrdoob/three.js/
-  version: r97
-  license:
-    name: MIT
-    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
-    gpl-compatible: true
-  js:
-    /libraries/three.js/build/three.min.js: { minified: true }
-
-# Development Version
-threejs.dev:
-  remote: https://github.com/mrdoob/three.js/
-  version: r97
-  license:
-    name: MIT
-    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
-    gpl-compatible: true
-  js:
-    /libraries/three.js/build/three.js: {}
 
 # Custom module library for general purposes.
 threejs.init:
   js:
-    js/threejs.js: {}
+    js/threejs.init.js: {}
   css:
     component:
       css/threejs.css: {}
   dependencies:
     - core/jquery
     - core/jquery.once
+    - threejs/threejs
+
+# Custom module library for Admin.
+threejs.admin:
+  js:
+    js/threejs.admin.js: {}
+  css:
+    component:
+      css/threejs.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - threejs/threejs
+
+# Custom module library for Test.
+threejs.test:
+  js:
+    js/TestThreeJS.js: {}
+  css:
+    component:
+      css/threejs.css: {}
+  dependencies:
     - threejs/threejs
 
 # Custom module library for Help page.
@@ -42,3 +44,250 @@ threejs.help:
   css:
     component:
       css/threejs_help.css: {}
+
+# ThreeJS library and components
+# Production Version
+threejs:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/build/three.min.js: { minified: true }
+  dependencies:
+      - core/jquery
+      - core/drupal
+      - core/drupalSettings
+      - core/jquery.once
+      - core/drupal.dialog
+
+# Development Version
+threejs.dev:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/build/three.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/drupal.dialog
+
+# Detector
+threejs.detector:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/Detector.js: {}
+  dependencies:
+    - threejs/threejs
+
+# stats
+threejs.stats:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/libs/stats.min.js: {}
+  dependencies:
+    - threejs/threejs
+
+# GUI Init
+threejs.gui:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/libs/dat.gui.min.js: {}
+  dependencies:
+    - threejs/threejs
+
+# -- Camera Controls --
+# Camera DeviceOrientation Controls
+threejs.deviceorientation.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/DeviceOrientationControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera Drag Controls
+threejs.drag.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/DragControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera Editor Controls
+threejs.editor.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/EditorControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera FirstPerson Controls
+threejs.firstperson.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/FirstPersonControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera Fly Controls
+threejs.fly.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/FlyControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera Orbit Controls
+threejs.orbit.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/OrbitControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera OrthographicTrackball Controls
+threejs.orthographictrackball.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/OrthographicTrackballControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera PointerLock Controls
+threejs.pointerlock.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/PointerLockControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera Trackball Controls
+threejs.trackball.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/TrackballControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera Transform Controls
+threejs.tansform.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/TransformControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# Camera VR Controls
+threejs.vr.controls:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/controls/VRControls.js: {}
+  dependencies:
+    - threejs/threejs
+
+# ThreeJS Loaders:
+# OBJ Loaders
+threejs.loaders.OBJLoader2:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/loaders/MTLLoader.js: {}
+    /libraries/three.js/examples/js/loaders/LoaderSupport.js.js: {}
+    /libraries/three.js/examples/js/loaders/OBJLoader2.js: {}
+  dependencies:
+    - threejs/threejs
+
+# ColladaLoader Loaders
+threejs.loaders.ColladaLoader:
+  remote: https://github.com/mrdoob/three.js/
+  version: r97
+  license:
+    name: MIT
+    url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/three.js/examples/js/loaders/ColladaLoader.js: {}
+  dependencies:
+    - threejs/threejs

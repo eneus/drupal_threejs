@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for an canvas field widget.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - data: Render elements of the canvas widget.
+ *
+ * @see template_preprocess_threejs_fields_widget()
+ */
+#}
+<div{{ attributes }}>
+  <div class="canvas-widget-data">
+      {# Render widget data without the canvas preview that was output already. #}
+      {{ data|without('preview') }}
+  </div>
+    <div id="canvas-container" data-model="{{ url }}">
+        {% if data.preview %}
+        {{ data.preview }}
+        {% endif %}
+    </div>
+</div>
